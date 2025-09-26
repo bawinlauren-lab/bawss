@@ -99,11 +99,12 @@
     <button id="enter-btn">Click</button>
   </div>
 
-
+  <!-- Main content -->
+  <div id="main-content">
     <div id="confession">
       <p>
         Hi, baby! I just want you to know, I already have so many memories na agad with you kahit online lang tayo nagkakilala. And I really treasure each chat and moment we’ve shared.
-        You deserve to be cherished, respected, and loved beyond measure.If you let me, I’d be super honored to be there for you, supporting you through life’s joys and challenges even if it’s just virtually for now.
+        You deserve to be cherished, respected, and loved beyond measure. If you let me, I’d be super honored to be there for you, supporting you through life’s joys and challenges even if it’s just virtually for now.
         My feelings for you are always genuine and real. I’ll listen to you, understand you, and be patient with your pace.
         No matter how long it takes, I’ll be here, hoping that one day, you’ll let me in completely.
         You’re worth every effort, every moment of patience, and every sincere gesture I can give.
@@ -113,12 +114,13 @@
 
     <button id="more-btn">More</button>
 
-     <div id="after clicking more button">
-  <p>
-   I want to ask for your permission to court you. Even if you weren’t ready for a relationship when we first met, I’m here—willing to wait and prove myself.
-   I’ll keep loving you, chasing you, and supporting your dreams until the day we’re finally together. Just let me court you until your heart is ready to say yes.
-     </p>
-        </div>
+    <div id="more-text" style="display:none;">
+      <p>
+        I want to ask for your permission to court you. Even if you weren’t ready for a relationship when we first met, I’m here willing to wait and prove myself.
+        I’ll keep loving you, chasing you, and supporting your dreams until the day we’re finally together. Just let me court you until your heart is ready to say yes.
+      </p>
+    </div>
+
     <div id="courtship" style="display:none;">
       <h2>Can I court you?</h2>
       <button class="btn-yes" id="yesBtn">Yes</button>
@@ -129,26 +131,33 @@
   <script>
     const enterBtn = document.getElementById('enter-btn');
     const landing = document.getElementById('landing');
+    const mainContent = document.getElementById('main-content');
+
     const moreBtn = document.getElementById('more-btn');
-    
+    const moreText = document.getElementById('more-text');
     const courtship = document.getElementById('courtship');
     const yesBtn = document.getElementById('yesBtn');
     const noBtn = document.getElementById('noBtn');
 
+    // Show main content
     enterBtn.addEventListener('click', () => {
       landing.style.display = 'none';
       mainContent.style.display = 'block';
     });
 
+    // Show more text and courtship
     moreBtn.addEventListener('click', () => {
+      moreText.style.display = 'block';
       courtship.style.display = 'block';
       moreBtn.style.display = 'none';
     });
 
+    // Yes button
     yesBtn.addEventListener('click', () => {
-      alert("Wala kang choice bes");
+      alert("Wala kang choice bes ❤️");
     });
 
+    // Movable No button
     noBtn.addEventListener('mouseenter', () => {
       const containerRect = mainContent.getBoundingClientRect();
       const maxTop = containerRect.height - noBtn.offsetHeight;
@@ -165,4 +174,3 @@
 
 </body>
 </html>
-
